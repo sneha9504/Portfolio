@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts",
+    "**/*.ts",
+    "**/*.tsx"
+, "app/layout.jsx", "app/page.jsx", "lib/utils.js", "components/ui/accordion.jsx", "components/ui/alert-dialog.jsx", "components/ui/alert.jsx", "components/ui/aspect-ratio.jsx", "components/ui/avatar.jsx", "components/ui/badge.jsx", "components/ui/breadcrumb.jsx", "components/ui/button.jsx", "components/ui/button-group.jsx", "components/ui/calendar.jsx", "components/ui/card.jsx", "components/ui/carousel.jsx", "components/ui/chart.jsx", "components/ui/checkbox.jsx", "components/ui/collapsible.jsx", "components/ui/command.jsx", "components/ui/context-menu.jsx", "components/ui/dialog.jsx", "components/ui/drawer.jsx", "components/ui/dropdown-menu.jsx", "components/ui/empty.jsx", "components/ui/field.jsx", "components/ui/form.jsx", "components/ui/hover-card.jsx", "components/ui/input-group.jsx", "components/ui/input.jsx", "components/ui/input-otp.jsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
