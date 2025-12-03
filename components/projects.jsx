@@ -5,53 +5,46 @@ import { ExternalLink, Github, ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { cn } from "../lib/utils"
 
-const categories = ["All", "Web Apps", "E-Commerce", "Design"]
+const categories = [ "Web Apps"]
 
 const projects = [
   {
-    title: "Bloom E-Commerce",
-    description:
-      "A luxury skincare brand e-commerce platform with personalized product recommendations and AR try-on features.",
-    image: "/elegant-skincare-ecommerce-website-pink-aesthetic.jpg",
-    category: "E-Commerce",
-    tags: ["Next.js", "Shopify", "Three.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    title: "Mindful Journal",
-    description:
-      "A wellness app for daily journaling, mood tracking, and mindfulness exercises with beautiful data visualizations.",
-    image: "/wellness-journaling-app-soft-pastel-colors.jpg",
-    category: "Web Apps",
-    tags: ["React", "Node.js", "MongoDB"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    title: "Artisan Portfolio",
-    description:
-      "A stunning portfolio template for creative professionals featuring smooth animations and immersive galleries.",
-    image: "/creative-portfolio-website-elegant-typography.jpg",
-    category: "Design",
-    tags: ["Figma", "Framer", "GSAP"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    title: "Recipe Collective",
-    description:
-      "A social recipe sharing platform where food lovers can discover, save, and share their favorite recipes.",
-    image: "/recipe-food-app-warm-colors-appetizing.jpg",
-    category: "Web Apps",
-    tags: ["Vue.js", "Firebase", "Algolia"],
-    liveUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
+  title: "Portfolio Website",
+  description:
+    "A modern and responsive personal portfolio showcasing projects, skills, and experience. Designed with elegant UI components, smooth animations, and optimized performance.",
+  image: "/portfolio.png",
+  category: "Web Apps",
+  tags: ["Next.js", "Tailwind CSS"],
+  liveUrl: "https://sneha-wani.netlify.app/",
+  githubUrl: "https://github.com/sneha9504/Portfolio",
+  featured: true,
+},
+
+{
+  title: "Jira Dashboard Clone",
+  description:
+    "A full-featured project management dashboard inspired by Jira. Includes Kanban board, drag-and-drop tasks, labels, filters, and user roles — built for real workflow automation.",
+  image: "/jira-dashboard.png",
+  category: "Web Apps",
+  tags: ["React", "Redux", "Node.js", "MongoDB"],
+  liveUrl: "https://jira-mock-demo.netlify.app/",
+  githubUrl: "https://github.com/sneha9504/Jira-mock-demo",
+  featured: true,
+},
+
+{
+  title: "Quiz App",
+  description:
+    "A sleek and interactive quiz application with dynamic questions, instant scoring, and category-based quizzes. Designed with clean UI and smooth animations.",
+  image: "/quiz-app.png",
+  category: "Web Apps",
+  tags: ["React", "JavaScript", "CSS"],
+  liveUrl: "https://quiz-app-sw.netlify.app/",
+  githubUrl: "https://github.com/sneha9504/Quiz-App",
+  featured: true,
+},
+
+
 ]
 
 export default function Projects() {
@@ -62,14 +55,14 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-24 md:py-32 bg-secondary/30">
       {/* Decorative Background */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
             <Sparkles size={18} />
-            <span className="text-sm font-medium tracking-wide">Projects</span>
+            <span className="text-lg font-medium tracking-wide">Projects</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold text-foreground text-balance">Selected Work</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -107,7 +100,7 @@ export default function Projects() {
               )}
             >
               {/* Project Image */}
-              <div className={cn("relative overflow-hidden", project.featured ? "aspect-[21/9]" : "aspect-[4/3]")}>
+              <div className={cn("relative overflow-hidden", project.featured ? "aspect-21/9" : "aspect-4/3")}> 
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -115,7 +108,7 @@ export default function Projects() {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Hover Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">

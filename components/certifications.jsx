@@ -46,12 +46,12 @@ export default function Certifications() {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 border border-primary/20 rounded-full" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
             <Award size={18} />
-            <span className="text-sm font-medium tracking-wide">Certifications</span>
+            <span className="text-lg font-medium tracking-wide">Certifications</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold text-foreground text-balance">Professional Credentials</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -68,7 +68,7 @@ export default function Certifications() {
             >
               {/* Gradient Background */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-50 group-hover:opacity-70 transition-opacity`}
+                className={`absolute inset-0 bg-linear-to-br ${cert.color} opacity-50 group-hover:opacity-70 transition-opacity`}
               />
 
               <CardContent className="relative p-6">

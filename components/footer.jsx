@@ -8,24 +8,23 @@ const footerLinks = [
 ]
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+  { icon: Github, href: "https://github.com/sneha9504", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/snehawani", label: "LinkedIn" },
+
 ]
 
 export default function Footer() {
   return (
     <footer className="relative py-12 border-t border-border bg-secondary/20">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
             <a href="#" className="text-2xl font-semibold text-foreground hover:text-primary transition-colors">
-              Olivia
+              Sneha
             </a>
             <p className="text-sm text-muted-foreground mt-2 flex items-center gap-1 justify-center md:justify-start">
-              Crafted with <Heart size={14} className="text-primary fill-primary" /> in San Francisco
+              Crafted with <Heart size={14} className="text-primary fill-primary" /> in India
             </p>
           </div>
 
@@ -62,7 +61,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Olivia Chen. All rights reserved.
+            © {new Date().getFullYear()} Sneha Wani. All rights reserved.
           </p>
         </div>
       </div>

@@ -34,12 +34,12 @@ export default function Contact() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
             <MessageCircle size={18} />
-            <span className="text-sm font-medium tracking-wide">Contact</span>
+            <span className="text-lg font-medium tracking-wide">Contact</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-semibold text-foreground text-balance">
             {"Let's Create Something Beautiful"}
@@ -62,10 +62,10 @@ export default function Contact() {
                 <div>
                   <h3 className="font-semibold text-foreground">Email</h3>
                   <a
-                    href="mailto:hello@oliviachen.dev"
+                    href="mailto:snehawani4321@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hello@oliviachen.dev
+                    snehawani4321@gmail.com
                   </a>
                 </div>
               </div>
@@ -76,13 +76,13 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Location</h3>
-                  <p className="text-muted-foreground">San Francisco, California</p>
+                  <p className="text-muted-foreground">Pune, India</p>
                 </div>
               </div>
             </div>
 
             {/* Personal Note */}
-            <div className="p-6 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/10">
+            <div className="p-6 rounded-3xl bg-linear-to-br from-primary/10 to-accent/10 border border-primary/10">
               <div className="flex items-center gap-2 mb-3">
                 <Heart size={18} className="text-primary" />
                 <span className="text-sm font-medium text-primary">A little note</span>

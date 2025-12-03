@@ -37,13 +37,13 @@ export default function Navigation() {
           : "bg-transparent py-6"
       )}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
         <Image
           src="/logo.png"
           alt="Sneha Logo"
-          width={70}
-          height={70}
+          width={80}
+          height={80}
           className="rounded-full hover:scale-110 transition-all duration-300 ease-out shadow-lg shadow-primary/20"
         />
 

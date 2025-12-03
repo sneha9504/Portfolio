@@ -66,13 +66,13 @@ export default function Skills() {
 
       {/* SKILLS SECTION */}
       <section id="skills" className="py-24 bg-secondary/60">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
 
           {/* Header */}
           <div className="text-center mb-16 space-y-4">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
               <Sparkles size={16} />
-              <span className="text-lg">My Expertise</span>
+              <span className="text-xl">My Expertise</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground">
               Skills & Technologies

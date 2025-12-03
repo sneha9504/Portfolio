@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/sneha9504", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/snehawani", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/snehawani/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:snehawani4321@gmail.com", label: "Email" },
 ];
 
@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left space-y-8">
@@ -59,7 +59,7 @@ Specializing in modern UI design, React-based development, and building performa
               <Button
                 asChild
                 size="lg"
-                className="rounded-full px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+                className="rounded-full text-lg px-8 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
               >
                 <a href="#projects">View My Work</a>
               </Button>
@@ -68,7 +68,7 @@ Specializing in modern UI design, React-based development, and building performa
                 asChild
                 variant="outline"
                 size="lg"
-                className="rounded-full px-8 border-primary/30 text-foreground hover:bg-primary/5 hover:border-primary transition-all duration-300 bg-transparent"
+                className="rounded-full text-lg px-8 border-primary/30 text-foreground hover:bg-primary/5 hover:border-primary transition-all duration-300 bg-transparent"
               >
                 <a href="#contact">Get in Touch</a>
               </Button>
@@ -84,10 +84,10 @@ Specializing in modern UI design, React-based development, and building performa
                 href="/sneha wani resume.pdf"
                 download="Sneha_Wani_Resume.pdf"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-full 
-                    bg-gradient-to-r from-primary to-primary/80
+                    bg-linear-to-r from-primary to-primary/80
                     text-primary-foreground font-medium shadow-lg shadow-primary/30
                     hover:shadow-xl hover:shadow-primary/40 hover:scale-105 
-                    transition-all duration-300"
+                    transition-all duration-300 text-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +137,7 @@ Specializing in modern UI design, React-based development, and building performa
               <div className="absolute inset-0 -m-8 rounded-full border border-primary/10" />
 
               {/* Image */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-background shadow-2xl shadow-primary/20">
+              <div className="relative w-72 h-72 md:w-70 md:h-70 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl shadow-primary/20">
                 <img
                   src="/hero-section.jpg"
                   alt="Sneha Wani - Creative Developer"
