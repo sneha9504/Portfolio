@@ -1,44 +1,57 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
-import { cn } from "../lib/utils"
+import { useState, useEffect } from "react";
+import Image from "next/image";           // <-- FIXED
+import { Menu, X } from "lucide-react";
+import { cn } from "../lib/utils";          // <-- FIXED
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#certifications", label: "Certifications" },
+  { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
-]
+];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled ? "bg-background/80 backdrop-blur-md shadow-sm py-4" : "bg-transparent py-6",
+        scrolled
+          ? "bg-background/80 backdrop-blur-md shadow-sm py-4"
+          : "bg-transparent py-6"
       )}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#"
-          className="text-2xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
-        >
-          Sneha 
-        </a>
+        {/* LOGO */}
+        <Image
+          src="/logo.png"
+          alt="Sneha Logo"
+          width={80}
+          height={80}
+          className="
+    rounded-full
+  
+   
+    hover:scale-110
+    transition-all
+    duration-300
+    ease-out
+  "
+        />
+
+        
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -54,11 +67,10 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-          aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -68,7 +80,7 @@ export default function Navigation() {
       <div
         className={cn(
           "md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border overflow-hidden transition-all duration-300",
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0",
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <div className="px-6 py-4 flex flex-col gap-4">
@@ -85,5 +97,5 @@ export default function Navigation() {
         </div>
       </div>
     </nav>
-  )
+  );
 }

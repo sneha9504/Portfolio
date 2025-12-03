@@ -1,6 +1,7 @@
 import Navigation from "../components/navigation";
 import Hero from "../components/hero";
 import About from "../components/about";
+import Skills from "../components/skills";
 import Certifications from "../components/certifications";
 import Experience from "../components/experience";
 import Projects from "../components/projects";
@@ -13,9 +14,10 @@ export default function Home() {
       <Navigation />
       <Hero />
       <About />
-      <Certifications />
+      <Skills/>
       <Experience />
       <Projects />
+      <Certifications />
       <Contact />
       <Footer />
     </main>
