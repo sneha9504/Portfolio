@@ -1,9 +1,9 @@
-import { Heart, Sparkles, Coffee, Palette } from "lucide-react"
+import { Heart, Sparkles, Coffee, Palette, User } from "lucide-react"
 
 const highlights = [
   { icon: Palette, label: "Design", description: "UI/UX & Visual Design" },
-  { icon: Sparkles, label: "Frontend", description: "React, Next.js, Vue" },
-  { icon: Coffee, label: "Backend", description: "Node.js, Python" },
+  { icon: Sparkles, label: "Frontend", description: "React, Next.js" },
+  { icon: Coffee, label: "Backend", description: "Node.js, Express.js" },
   { icon: Heart, label: "Passion", description: "Accessible Web" },
 ]
 
@@ -13,7 +13,7 @@ export default function About() {
       {/* Decorative Background */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image Collage */}
           <div className="relative order-2 lg:order-1">
@@ -38,54 +38,60 @@ export default function About() {
           </div>
 
           {/* Right - Content */}
-          <div className="order-1 lg:order-2 space-y-8">
-            <div className="space-y-4">
-              <p className="text-primary font-medium tracking-widest uppercase text-sm">About Me</p>
-              <h2 className="text-4xl md:text-5xl font-semibold text-foreground leading-tight text-balance">
-                Passionate about creating meaningful digital experiences
-              </h2>
-            </div>
+       <div className="order-1 lg:order-3 space-y-8 max-w-4xl mx-auto">
+  <div className="space-y-4">
+    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary w-fit">
+      <User size={18} className="shrink-0" />
+      <span className="text-lg font-semibold tracking-wide">
+        About Me
+      </span>
+    </div>
 
-            <div className="space-y-6 text-muted-foreground leading-relaxed">
-              <p>
-                {
-                  "Hello! I'm Olivia, a creative developer based in San Francisco with a deep love for blending aesthetics with functionality. My journey in tech started when I customized my first Tumblr theme at 14—and I've been hooked ever since."
-                }
-              </p>
-              <p>
-                {
-                  "With over 5 years of experience, I specialize in building accessible, performant web applications that don't compromise on beauty. I believe that great design should be inclusive, and every pixel should serve a purpose."
-                }
-              </p>
-              <p>
-                {
-                  "When I'm not coding, you'll find me exploring local coffee shops, practicing calligraphy, or tending to my growing collection of houseplants. I'm also an advocate for women in tech and regularly mentor aspiring developers."
-                }
-              </p>
-            </div>
+    <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
+      Creating thoughtful, delightful digital experiences with a touch of elegance.
+    </h2>
+  </div>
 
-            {/* Skill Highlights */}
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              {highlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="group p-4 rounded-2xl bg-secondary/50 hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                      <item.icon size={20} />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground">{item.label}</h3>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </div>
+  <div className="space-y-6 text-lg text-muted-foreground leading-relaxed text-justify">
+    <p>
+      I’m Sneha Wani, a Frontend and MERN Stack Developer passionate about creating clean, modern, and user-focused web experiences. I specialize in building responsive interfaces and beginner-friendly full-stack applications using React, Next.js, Node.js, Express, and MongoDB.
+    </p>
+
+    <p>
+      As a fresher, I focus on writing clear, maintainable code and learning industry-standard development practices. I enjoy turning ideas into working prototypes and continuously improving my skills in frontend design, UI/UX principles, and full-stack development.
+    </p>
+
+    <p>
+      I love exploring new tools, studying modern design trends, and working on projects that help me grow both technically and creatively. With every project, I aim to build better, faster, and more meaningful digital experiences.
+    </p>
+  </div>
+
+
+         
+
+
+          {/* Skill Highlights */}
+          <div className="grid grid-cols-2 gap-4 pt-4">
+            {highlights.map((item) => (
+              <div
+                key={item.label}
+                className="group p-4 rounded-2xl bg-secondary/50 hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                    <item.icon size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg text-foreground">{item.label}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    </section >
   )
 }

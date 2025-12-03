@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";           // <-- FIXED
-import { Menu, X } from "lucide-react";
-import { cn } from "../lib/utils";          // <-- FIXED
+import Image from "next/image";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { cn } from "../lib/utils";
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -17,6 +18,9 @@ const navLinks = [
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Theme Hook
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -34,24 +38,14 @@ export default function Navigation() {
       )}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* LOGO */}
+        {/* Logo */}
         <Image
           src="/logo.png"
           alt="Sneha Logo"
-          width={80}
-          height={80}
-          className="
-    rounded-full
-  
-   
-    hover:scale-110
-    transition-all
-    duration-300
-    ease-out
-  "
+          width={70}
+          height={70}
+          className="rounded-full hover:scale-110 transition-all duration-300 ease-out shadow-lg shadow-primary/20"
         />
-
-        
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
@@ -59,15 +53,17 @@ export default function Navigation() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+              className="text-lg font-medium text-muted-foreground hover:text-primary transition-colors relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full rounded-full" />
             </a>
           ))}
+
+          
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
@@ -94,6 +90,8 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+
+          
         </div>
       </div>
     </nav>

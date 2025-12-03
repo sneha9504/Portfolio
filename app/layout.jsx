@@ -1,7 +1,7 @@
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
-
+import { ThemeProvider } from "next-themes";
 // Using elegant fonts for feminine theme
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -44,7 +44,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

@@ -35,14 +35,16 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative py-24 md:py-32">
+    <section id="experience" className="relative py-24 md:py-32 bg-secondary/60">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
           <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
-              <Briefcase size={18} />
-              <span className="text-sm font-medium tracking-wide">Experience</span>
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary w-fit">
+              <Briefcase size={20} className="shrink-0" />
+              <span className="text-lg text-center md:text-base font-semibold tracking-wide">
+                Experience
+              </span>
             </div>
             <h2 className="text-4xl md:text-5xl font-semibold text-foreground text-balance">My Professional Journey</h2>
           </div>
