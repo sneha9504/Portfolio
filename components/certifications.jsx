@@ -1,5 +1,5 @@
 import { Award, ExternalLink, Calendar } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "../components/ui/card"
 
 const certifications = [
   {

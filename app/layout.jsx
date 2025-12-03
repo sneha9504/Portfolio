@@ -17,9 +17,9 @@ const inter = Inter({
 // Metadata cannot use TypeScript annotations in JSX.
 // For JSX, export a plain object if needed.
 export const metadata = {
-  title: "Olivia Chen | Creative Developer & Designer",
+  title: "Sneha Wani - Creative Developer Portfolio",
   description:
-    "Personal portfolio of Olivia Chen - A passionate creative developer crafting beautiful digital experiences with elegance and purpose.",
+    "Personal portfolio of Sneha Wani - A passionate creative developer crafting beautiful digital experiences with elegance and purpose.",
   generator: "v0.app",
   icons: {
     icon: [

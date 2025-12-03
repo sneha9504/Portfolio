@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { ExternalLink, Github, ArrowRight, Sparkles } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../components/ui/button"
 import { cn } from "../lib/utils"
 
 const categories = ["All", "Web Apps", "E-Commerce", "Design"]

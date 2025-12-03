@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn } from "../lib/utils"
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -37,7 +37,7 @@ export default function Navigation() {
           href="#"
           className="text-2xl font-semibold tracking-tight text-foreground hover:text-primary transition-colors"
         >
-          Olivia
+          Sneha 
         </a>
 
         {/* Desktop Navigation */}

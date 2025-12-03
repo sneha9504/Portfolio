@@ -1,10 +1,10 @@
 import { ArrowDown, Github, Linkedin, Mail, Twitter } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../components/ui/button"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+ 
   { icon: Mail, href: "mailto:hello@oliviachen.dev", label: "Email" },
 ]
 
@@ -35,7 +35,7 @@ export default function Hero() {
               >
                 {"Hi, I'm "}
                 <span className="text-primary relative inline-block">
-                  Olivia Chen
+                  Sneha Wani
                   <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary/40 rounded-full" />
                 </span>
               </h1>
