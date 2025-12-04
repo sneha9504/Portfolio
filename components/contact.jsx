@@ -1,53 +1,78 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Mail, MapPin, Send, Heart, MessageCircle } from "lucide-react"
-import { Button } from "../components/ui/button"
-import { Input } from "../components/ui/input"
-import { Textarea } from "../components/ui/textarea"
-import { Label } from "../components/ui/label"
+import { useState } from "react";
+import { Mail, MapPin, Send, Heart, MessageCircle } from "lucide-react";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Textarea } from "../components/ui/textarea";
+import { Label } from "../components/ui/label";
+import { useToast } from "../hooks/use-toast";   // <-- IMPORTANT
 
 export default function Contact() {
+  const { toast } = useToast();  // <-- initialize toast hook
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch(
+      "https://formsubmit.co/ajax/snehawani4321@gmail.com",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    if (response.ok) {
+      toast({
+        title: "Message Sent 🎉",
+        description: "Thank you! I'll get back to you shortly.",
+        duration: 3000,
+      });
+
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      toast({
+        title: "Oops! Something went wrong ❌",
+        description: "Please try again later.",
+        variant: "destructive",
+      });
+    }
+  };
 
   const handleChange = (e) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }))
-  }
+    }));
+  };
 
   return (
     <section id="contact" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Decorative Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary">
             <MessageCircle size={18} />
-            <span className="text-lg font-medium tracking-wide">Contact</span>
+            <span className="text-lg font-medium">Contact</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-semibold text-foreground text-balance">
+
+          <h2 className="text-4xl md:text-5xl font-semibold text-foreground">
             {"Let's Create Something Beautiful"}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {
-              "Have a project in mind or just want to say hello? I'd love to hear from you. Let's start a conversation about bringing your vision to life."
-            }
+
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
         </div>
 
@@ -82,15 +107,13 @@ export default function Contact() {
             </div>
 
             {/* Personal Note */}
-            <div className="p-6 rounded-3xl bg-linear-to-br from-primary/10 to-accent/10 border border-primary/10">
+            <div className="p-6 rounded-3xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/10">
               <div className="flex items-center gap-2 mb-3">
                 <Heart size={18} className="text-primary" />
                 <span className="text-sm font-medium text-primary">A little note</span>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-sm">
-                {
-                  "I'm always excited to connect with fellow creatives, entrepreneurs, and anyone passionate about building beautiful things for the web. Whether it's a collaboration, a quick question, or just a friendly chat—my inbox is open!"
-                }
+              <p className="text-muted-foreground text-sm">
+                I'm always excited to connect with fellow creatives & passionate builders.
               </p>
             </div>
           </div>
@@ -99,76 +122,70 @@ export default function Contact() {
           <div className="lg:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="p-8 rounded-3xl bg-card border border-border shadow-xl shadow-primary/5"
+              className="p-8 rounded-3xl bg-card border shadow-xl"
             >
               <div className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
+                  {/* Name */}
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-foreground">
-                      Your Name
-                    </Label>
+                    <Label htmlFor="name">Your Name</Label>
                     <Input
                       id="name"
                       name="name"
-                      placeholder="Jane Smith"
                       value={formData.name}
                       onChange={handleChange}
-                      className="rounded-xl border-border bg-background focus:border-primary focus:ring-primary"
+                      placeholder="Jane Smith"
                       required
                     />
                   </div>
+
+                  {/* Email */}
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">
-                      Email Address
-                    </Label>
+                    <Label htmlFor="email">Email Address</Label>
                     <Input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="jane@example.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="rounded-xl border-border bg-background focus:border-primary focus:ring-primary"
+                      placeholder="jane@example.com"
                       required
                     />
                   </div>
                 </div>
 
+                {/* Subject */}
                 <div className="space-y-2">
-                  <Label htmlFor="subject" className="text-foreground">
-                    Subject
-                  </Label>
+                  <Label htmlFor="subject">Subject</Label>
                   <Input
                     id="subject"
                     name="subject"
-                    placeholder="Project Inquiry / Collaboration / Just Saying Hi"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="rounded-xl border-border bg-background focus:border-primary focus:ring-primary"
+                    placeholder="Project Inquiry / Collaboration"
                     required
                   />
                 </div>
 
+                {/* Message */}
                 <div className="space-y-2">
-                  <Label htmlFor="message" className="text-foreground">
-                    Your Message
-                  </Label>
+                  <Label htmlFor="message">Your Message</Label>
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Tell me about your project, idea, or just share what's on your mind..."
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="rounded-xl border-border bg-background focus:border-primary focus:ring-primary resize-none"
+                    placeholder="Tell me more..."
                     required
                   />
                 </div>
 
+                {/* Submit */}
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300"
+                  className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg"
                 >
                   <Send size={18} className="mr-2" />
                   Send Message
@@ -179,5 +196,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -3,36 +3,40 @@ import { Card, CardContent } from "../components/ui/card"
 
 const certifications = [
   {
-    title: "AWS Certified Cloud Practitioner",
-    issuer: "Amazon Web Services",
-    date: "December 2024",
-    credential: "AWS-CP-2024",
-    logo: "/aws-logo-orange.jpg",
+    title: "Front-End Development",
+    issuer: "Felix-Its",
+    date: "August 2025",
+    credential: "158733580",
+    logo: "/felix-its.png",
     color: "from-orange-100 to-amber-50",
+    credentialURL: "https://www.credential.net/d88d4219-2f52-4e9e-b243-98711e9d1201#acc.oH2sLTZi"
   },
   {
-    title: "Google UX Design Professional",
-    issuer: "Google",
-    date: "September 2024",
-    credential: "GUXD-2024",
-    logo: "/colorful-google-logo.png",
+    title: "Postman API Fundamentals Student Expert",
+    issuer: "Postman",
+    date: "August 2025",
+    credential: "6898c6464b9ed0285f8dd390",
+    logo: "/postman.png",
     color: "from-blue-100 to-green-50",
+    credentialURL: "https://badgr.com/public/assertions/e6OhrSj-TdmV9m_0c-LePg?identity__email=snehawani4321%40gmail.com"
   },
   {
-    title: "Meta Front-End Developer",
-    issuer: "Meta",
-    date: "June 2024",
-    credential: "META-FE-2024",
-    logo: "/meta-logo-blue.jpg",
+    title: "WordPress Crash Course: Build any Website in Minutes",
+    issuer: "Udemy",
+    date: "September 2025",
+    credential: "UC-dd5aefc0-014c-403f-88bd-6ea8ad536cd4",
+    logo: "/udemy.png",
     color: "from-blue-100 to-indigo-50",
+    credentialURL: "https://www.udemy.com/certificate/UC-dd5aefc0-014c-403f-88bd-6ea8ad536cd4/"
   },
   {
-    title: "Figma UI/UX Masterclass",
-    issuer: "Figma",
-    date: "March 2024",
-    credential: "FIG-UX-2024",
+    title: "Data Structures and Algorithms using Java",
+    issuer: "NPTEL",
+    date: "October 2024",
+    credential: "NPTEL24CS96S457800114",
     logo: "/figma-logo-purple-orange.jpg",
     color: "from-purple-100 to-pink-50",
+    credentialURL: "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS96S45780011404320557"
   },
 ]
 
@@ -68,7 +72,7 @@ export default function Certifications() {
             >
               {/* Gradient Background */}
               <div
-                className={`absolute inset-0 bg-linear-to-br ${cert.color} opacity-50 group-hover:opacity-70 transition-opacity`}
+                className={`absolute inset-0 bg-gradient-to-br ${cert.color} opacity-50 group-hover:opacity-70 transition-opacity`}
               />
 
               <CardContent className="relative p-6">
@@ -100,7 +104,7 @@ export default function Certifications() {
 
                   {/* External Link */}
                   <a
-                    href="#"
+                    href={cert.credentialURL || "#"}
                     className="p-2 rounded-full bg-background/80 text-muted-foreground hover:text-primary hover:bg-background transition-colors opacity-0 group-hover:opacity-100"
                     aria-label={`View ${cert.title} credential`}
                   >

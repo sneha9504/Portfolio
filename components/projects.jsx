@@ -17,7 +17,7 @@ const projects = [
   tags: ["Next.js", "Tailwind CSS"],
   liveUrl: "https://sneha-wani.netlify.app/",
   githubUrl: "https://github.com/sneha9504/Portfolio",
-  featured: true,
+  featured: false,
 },
 
 {
@@ -29,7 +29,7 @@ const projects = [
   tags: ["React", "Redux", "Node.js", "MongoDB"],
   liveUrl: "https://jira-mock-demo.netlify.app/",
   githubUrl: "https://github.com/sneha9504/Jira-mock-demo",
-  featured: true,
+  featured: false,
 },
 
 {
@@ -41,7 +41,7 @@ const projects = [
   tags: ["React", "JavaScript", "CSS"],
   liveUrl: "https://quiz-app-sw.netlify.app/",
   githubUrl: "https://github.com/sneha9504/Quiz-App",
-  featured: true,
+  featured: false,
 },
 
 
@@ -55,7 +55,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-24 md:py-32 bg-secondary/30">
       {/* Decorative Background */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-primary/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -100,7 +100,7 @@ export default function Projects() {
               )}
             >
               {/* Project Image */}
-              <div className={cn("relative overflow-hidden", project.featured ? "aspect-21/9" : "aspect-4/3")}> 
+              <div className={cn("relative overflow-hidden", project.featured ? "aspect-[21/9]" : "aspect-[4/3]")}> 
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
@@ -108,7 +108,7 @@ export default function Projects() {
                 />
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 {/* Hover Content */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">

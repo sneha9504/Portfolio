@@ -9,7 +9,7 @@ const footerLinks = [
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/sneha9504", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/snehawani", label: "LinkedIn" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/snehawani/", label: "LinkedIn" },
 
 ]
 

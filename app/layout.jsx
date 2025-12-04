@@ -2,6 +2,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "../components/ui/toaster";
 // Using elegant fonts for feminine theme
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
           enableSystem={false}
         >
           {children}
+        <Toaster />
         </ThemeProvider>
         <Analytics />
       </body>

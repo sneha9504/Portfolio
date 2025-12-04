@@ -84,7 +84,7 @@ Specializing in modern UI design, React-based development, and building performa
                 href="/sneha wani resume.pdf"
                 download="Sneha_Wani_Resume.pdf"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-full 
-                    bg-linear-to-r from-primary to-primary/80
+                    bg-gradient-to-r from-primary to-primary/80
                     text-primary-foreground font-medium shadow-lg shadow-primary/30
                     hover:shadow-xl hover:shadow-primary/40 hover:scale-105 
                     transition-all duration-300 text-lg"
