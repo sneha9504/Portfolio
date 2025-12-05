@@ -5,44 +5,44 @@ import { ExternalLink, Github, ArrowRight, Sparkles } from "lucide-react"
 import { Button } from "../components/ui/button"
 import { cn } from "../lib/utils"
 
-const categories = [ "Web Apps"]
+const categories = ["Web Apps"]
 
 const projects = [
   {
-  title: "Portfolio Website",
-  description:
-    "A modern and responsive personal portfolio showcasing projects, skills, and experience. Designed with elegant UI components, smooth animations, and optimized performance.",
-  image: "/portfolio.png",
-  category: "Web Apps",
-  tags: ["Next.js", "Tailwind CSS"],
-  liveUrl: "https://sneha-wani.netlify.app/",
-  githubUrl: "https://github.com/sneha9504/Portfolio",
-  featured: false,
-},
+    title: "Portfolio Website",
+    description:
+      "A modern and responsive personal portfolio showcasing projects, skills, and experience. Designed with elegant UI components, smooth animations, and optimized performance.",
+    image: "/portfolio.png",
+    category: "Web Apps",
+    tags: ["Next.js", "Tailwind CSS"],
+    liveUrl: "https://sneha-wani.netlify.app/",
+    githubUrl: "https://github.com/sneha9504/Portfolio",
+    featured: false,
+  },
 
-{
-  title: "Jira Dashboard Clone",
-  description:
-    "A full-featured project management dashboard inspired by Jira. Includes Kanban board, drag-and-drop tasks, labels, filters, and user roles — built for real workflow automation.",
-  image: "/jira-dashboard.png",
-  category: "Web Apps",
-  tags: ["React", "Redux", "Node.js", "MongoDB"],
-  liveUrl: "https://jira-mock-demo.netlify.app/",
-  githubUrl: "https://github.com/sneha9504/Jira-mock-demo",
-  featured: false,
-},
+  {
+    title: "Jira Dashboard Clone",
+    description:
+      "A full-featured project management dashboard inspired by Jira. Includes Kanban board, drag-and-drop tasks, labels, filters, and user roles — built for real workflow automation.",
+    image: "/jira-dashboard.png",
+    category: "Web Apps",
+    tags: ["React", "Redux", "Node.js", "MongoDB"],
+    liveUrl: "https://jira-mock-demo.netlify.app/",
+    githubUrl: "https://github.com/sneha9504/Jira-mock-demo",
+    featured: false,
+  },
 
-{
-  title: "Quiz App",
-  description:
-    "A sleek and interactive quiz application with dynamic questions, instant scoring, and category-based quizzes. Designed with clean UI and smooth animations.",
-  image: "/quiz-app.png",
-  category: "Web Apps",
-  tags: ["React", "JavaScript", "CSS"],
-  liveUrl: "https://quiz-app-sw.netlify.app/",
-  githubUrl: "https://github.com/sneha9504/Quiz-App",
-  featured: false,
-},
+  {
+    title: "Quiz App",
+    description:
+      "A sleek and interactive quiz application with dynamic questions, instant scoring, and category-based quizzes. Designed with clean UI and smooth animations.",
+    image: "/quiz-app.png",
+    category: "Web Apps",
+    tags: ["React", "JavaScript", "CSS"],
+    liveUrl: "https://quiz-app-sw.netlify.app/",
+    githubUrl: "https://github.com/sneha9504/Quiz-App",
+    featured: false,
+  },
 
 
 ]
@@ -100,35 +100,60 @@ export default function Projects() {
               )}
             >
               {/* Project Image */}
-              <div className={cn("relative overflow-hidden", project.featured ? "aspect-[21/9]" : "aspect-[4/3]")}> 
+              <div className={cn("relative overflow-hidden", project.featured ? "aspect-[21/9]" : "aspect-[4/3]")}>
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Overlay (visible on hover for desktop, always visible on mobile) */}
+                <div className="
+  absolute inset-0 
+  bg-gradient-to-t from-foreground/90 via-foreground/20 to-transparent
+  opacity-100 md:opacity-0 md:group-hover:opacity-100
+  transition-opacity duration-500
+" />
 
                 {/* Hover Content */}
-                <div className="absolute inset-0 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="flex gap-3">
+                <div className="
+  absolute inset-0 p-6 flex flex-col justify-end
+  opacity-100 md:opacity-0 md:group-hover:opacity-100
+  transition-opacity duration-500
+">
+                  <div className="flex flex-col sm:flex-row gap-3">
+
                     <a
                       href={project.liveUrl}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground text-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
+                      className="
+        inline-flex items-center gap-2 px-4 py-2 rounded-full
+        bg-background/30 text-primary-foreground
+        text-sm font-medium
+        hover:bg-primary/90 transition-colors
+        w-max sm:w-auto text-center
+      "
                     >
                       <ExternalLink size={16} />
                       Live Site
                     </a>
+
                     <a
                       href={project.githubUrl}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground/20 text-primary-foreground text-sm font-medium hover:bg-foreground/30 transition-colors backdrop-blur-sm"
+                      className="
+        inline-flex items-center gap-2 px-4 py-2 rounded-full
+        bg-foreground/20 text-primary-foreground 
+        text-sm font-medium 
+        hover:bg-foreground/30 transition-colors backdrop-blur-sm
+        w-max sm:w-auto text-center
+      "
                     >
                       <Github size={16} />
                       Code
                     </a>
+
                   </div>
                 </div>
+
 
                 {/* Featured Badge */}
                 {project.featured && (
