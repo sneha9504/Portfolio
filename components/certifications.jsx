@@ -34,7 +34,7 @@ const certifications = [
     issuer: "NPTEL",
     date: "October 2024",
     credential: "NPTEL24CS96S457800114",
-    logo: "/figma-logo-purple-orange.jpg",
+    logo: "/nptel.png",
     color: "from-purple-100 to-pink-50",
     credentialURL: "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS96S45780011404320557"
   },
