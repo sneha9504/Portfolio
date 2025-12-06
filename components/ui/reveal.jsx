@@ -6,22 +6,29 @@ export default function Reveal({ children, className = "" }) {
   const ref = useRef(null);
 
   useEffect(() => {
-    const element = ref.current;
+    const el = ref.current;
+
+    // Show immediately if visible on load
+    const showOnLoad = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add("show");
+      }
+    };
+    showOnLoad();
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            element.classList.add("show");
-            observer.unobserve(element); // Animate only once
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.classList.add("show");
+        } else {
+          el.classList.remove("show");
+        }
       },
       { threshold: 0.2 }
     );
 
-    if (element) observer.observe(element);
-
+    observer.observe(el);
     return () => observer.disconnect();
   }, []);
 

@@ -1,109 +1,138 @@
 "use client"
 
-import { Server, Code2, Zap, Layers, Cpu, Sparkles, GitBranch, Rocket } from "lucide-react"
+import { Server, Code2, Zap, Layers, Cpu, Sparkles, Rocket, Award, GitBranch } from "lucide-react"
+import Reveal from "../components/ui/reveal"   // 👈 added
 
 const stats = [
   { icon: Code2, value: "10+", label: "Projects", sub: "End-to-end builds" },
-  { icon: Zap, value: "3x", label: "Performance Boost", sub: "UI/UX optimizations" },
-  { icon: Server, value: "40+", label: "Commits / Month", sub: "Consistent learning" },
-  { icon: Rocket, value: "100%", label: "Passion", sub: "Quality-driven" },
-]
-
-const skillGroups = [
-  {
-    title: "Frontend",
-    icon: Sparkles,
-    skills: "React, Next.js, Tailwind CSS, UI Architecture",
-  },
-  {
-    title: "Backend",
-    icon: Server,
-    skills: "Node.js, Express.js, REST APIs",
-  },
-  {
-    title: "Databases",
-    icon: Layers,
-    skills: "MongoDB, Firebase, SQL Basics",
-  },
-  {
-    title: "Tools & Workflow",
-    icon: Cpu,
-    skills: "Git, GitHub, VSCode, AI-assisted dev",
-  },
+  { icon: Zap, value: "3x", label: "Performance Boost", sub: "UI/UX optimization" },
+  { icon: Rocket, value: "40+", label: "Commits/Month", sub: "Consistency & growth" },
+  { icon: Sparkles, value: "100%", label: "Passion", sub: "Quality-focused coding" },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32">
-      <div className="max-w-7xl mx-auto px-6">
+    <Reveal>   {/* 👈 REVEAL EFFECT WRAPPER */}
 
-        {/* Section Label */}
-        <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
-          ABOUT ME
-        </p>
+      <section id="about" className="relative py-18 md:py-20">
 
-        {/* Title */}
-        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight max-w-3xl">
-          Crafting clean, fast & user-first digital experiences.
-        </h2>
-
-        {/* Intro */}
-        <div className="mt-8 space-y-5 text-lg text-muted-foreground max-w-3xl leading-relaxed">
-          <p>
-            I’m <span className="text-foreground font-semibold">Sneha Wani</span>, a Frontend & MERN Stack Developer who enjoys creating 
-            modern, accessible, and intuitive web experiences. I specialize in building 
-            clean UI, seamless interactions, and efficient full-stack functionalities.
-          </p>
-
-          <p>
-            As a fresher, I focus on writing maintainable code, learning industry best 
-            practices, and building scalable interfaces with React, Next.js, Node.js, 
-            and MongoDB. My goal is to blend great engineering with meaningful user experience.
-          </p>
-
-          <p>
-            I love exploring design systems, animations, tech workflows, and performance-oriented development 
-            to build software that feels polished, delightful, and professional.
-          </p>
+        {/* Background Glow */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-primary/10 blur-3xl rounded-full" />
+          <div className="absolute bottom-0 right-0 w-80 h-80 bg-accent/10 blur-3xl rounded-full" />
         </div>
 
-        {/* Stats Grid */}
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((item) => (
-            <div
-              key={item.label}
-              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all shadow-sm"
-            >
-              <div className="p-2 w-fit rounded-xl bg-primary/10 text-primary mb-3">
-                <item.icon size={20} />
-              </div>
-              <p className="text-3xl font-bold text-foreground">{item.value}</p>
-              <p className="text-sm font-medium text-primary">{item.label}</p>
-              <p className="text-xs text-muted-foreground mt-1">{item.sub}</p>
+        <div className="relative max-w-7xl mx-auto px-6">
+
+          {/* Section Label */}
+          <div className="inline-flex items-center gap-2 px-4 py-2  mb-5 rounded-full 
+              bg-primary/10 text-primary shadow-sm backdrop-blur-sm
+              border border-primary/20 w-fit">
+            <Sparkles size={16} />
+            <span className="text-base font-semibold tracking-wide">
+              About Me
+            </span>
+          </div>
+
+          {/* Title */}
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight max-w-4xl">
+            I build clean, fast & user-first digital products with engineering discipline.
+          </h2>
+
+          {/* -------- DESCRIPTION + HIGHLIGHTS -------- */}
+          <div className="mt-12 grid lg:grid-cols-2 gap-12">
+
+            {/* LEFT */}
+            <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-2xl text-justify">
+
+              <p>
+                I’m <span className="text-foreground font-semibold">Sneha Wani</span>, a Frontend and MERN Stack Developer focused on crafting
+                fast, accessible, and visually polished web experiences. I combine thoughtful UI engineering with
+                practical full-stack development to deliver interfaces that feel effortless and reliable.
+              </p>
+
+              <p>
+                I prioritize maintainable code, scalable architecture, and clear product thinking. My core stack—
+                React, Next.js, Node.js, and MongoDB—helps me build modern applications that are structured,
+                efficient, and easy to evolve.
+              </p>
+
+              <p>
+                With a strong interest in UI/UX foundations, performance tuning, and AI-assisted workflows,
+                I aim to create digital experiences that look refined, respond instantly, and genuinely solve problems.
+              </p>
+
             </div>
-          ))}
-        </div>
 
-        {/* Skills Section */}
-        <div className="mt-16 p-8 rounded-3xl bg-foreground/[0.02] border border-border backdrop-blur">
-          <h3 className="text-lg font-semibold text-foreground mb-6">Skills & Specialities</h3>
+            {/* RIGHT */}
+            <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10 shadow-sm backdrop-blur-sm max-w-md lg:ml-auto">
+              <h3 className="text-sm font-medium text-foreground mb-4 flex items-center gap-2">
+                <Award size={16} className="text-primary" />
+                Highlights
+              </h3>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {skillGroups.map((group) => (
-              <div key={group.title} className="flex items-start gap-3">
-                <div className="p-2 rounded-xl bg-primary/10 text-primary flex-shrink-0">
-                  <group.icon size={18} />
+              <ul className="space-y-3 text-sm text-muted-foreground">
+
+                <li className="flex gap-2 items-start">
+                  <GitBranch size={14} className="text-primary mt-1" />
+                  Solid understanding of modern frontend architecture & reusable component systems.
+                </li>
+
+                <li className="flex gap-2 items-start">
+                  <GitBranch size={14} className="text-primary mt-1" />
+                  Experience building full-stack apps with clean UI, structured APIs & stable deployments.
+                </li>
+
+                <li className="flex gap-2 items-start">
+                  <GitBranch size={14} className="text-primary mt-1" />
+                  Strong focus on performance, accessibility & user-centric development.
+                </li>
+
+                <li className="flex gap-2 items-start">
+                  <GitBranch size={14} className="text-primary mt-1" />
+                  Continuous learner—improving through real projects & AI-powered workflows.
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          {/* -------- STATS -------- */}
+          <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {stats.map((item) => (
+              <div
+                key={item.label}
+                className="
+                  p-5 rounded-xl bg-card border border-border
+                  hover:border-primary/50 transition-all duration-300
+                  hover:shadow-md hover:shadow-primary/10
+                  flex flex-col gap-1
+                "
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-1.5 rounded-lg bg-primary/10 text-primary">
+                    <item.icon size={18} />
+                  </div>
+
+                  <p className="text-2xl font-bold text-foreground leading-none">
+                    {item.value}
+                  </p>
                 </div>
-                <div>
-                  <p className="font-semibold text-foreground">{group.title}</p>
-                  <p className="text-sm text-muted-foreground">{group.skills}</p>
-                </div>
+
+                <p className="text-sm font-medium text-primary mt-1 leading-none">
+                  {item.label}
+                </p>
+
+                <p className="text-xs text-muted-foreground mt-1 leading-snug">
+                  {item.sub}
+                </p>
               </div>
             ))}
           </div>
-        </div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+
+    </Reveal>
   )
 }

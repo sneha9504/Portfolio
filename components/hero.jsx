@@ -135,11 +135,11 @@ function TypingRoles() {
 
 function CTAButtons() {
   return (
-    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+    <div className="flex flex-row sm:flex-row gap-4 justify-center lg:justify-start">
       <Button
         asChild
         size="lg"
-        className="rounded-full px-6 py-2 text-sm 
+        className="rounded-full px-6 py-2 w-fit text-sm 
         bg-primary text-primary-foreground 
         hover:bg-primary/90 shadow-md"
       >
@@ -151,7 +151,7 @@ function CTAButtons() {
         variant="outline"
         size="lg"
         className="rounded-full px-6 py-2 text-sm 
-        border-primary hover:bg-primary/10"
+        border-primary w-fit hover:bg-primary/10"
       >
         <a href="#contact">Get in Touch</a>
       </Button>
@@ -211,7 +211,7 @@ function RightImage() {
 
       <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl shadow-primary/20">
         <img
-          src="/hero-section.jpg"
+          src="/profile.jpg"
           alt="Sneha Wani"
           className="w-full h-full object-cover"
         />
@@ -279,7 +279,7 @@ function ResumeFloatingButtonMobile() {
     <a
       href="/sneha wani resume.pdf"
       download="Sneha_Wani_Resume.pdf"
-      className="md:hidden fixed bottom-8 right-8 p-4 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-110 transition-all"
+      className="md:hidden fixed bottom-8 right-8 p-4 rounded-full bg-primary text-primary-foreground shadow-lg hover:scale-110 transition-all z-100"
     >
       <Download size={24} />
     </a>

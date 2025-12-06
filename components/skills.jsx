@@ -6,14 +6,19 @@ import {
   Database,
   Layers,
   Sparkles,
+  Bot,
 } from "lucide-react";
+import Reveal from "../components/ui/reveal";
+/* -------------------------------
+   DATA: AI Tools + Skill Groups
+-------------------------------- */
 
 const aiTools = [
-  { name: "ChatGPT", logo: "/chatgpt.png" },
-  { name: "Gemini", logo: "/gemini.jpg" },
-  { name: "Claude", logo: "/claude.png" },
-  { name: "Grok", logo: "/grok.png" },
-  { name: "Perplexity", logo: "/perplexity.png" },
+  { name: "ChatGPT", logo: "/chatgpt.png", use: "Faster debugging & idea exploration" },
+  { name: "Gemini", logo: "/gemini.jpg", use: "Architecture planning & research" },
+  { name: "Claude", logo: "/claude.png", use: "Clean documentation & code clarity" },
+  { name: "Grok", logo: "/grok.png", use: "Problem-solving & deeper logic" },
+  { name: "Perplexity", logo: "/perplexity.png", use: "Instant technical insights" },
 ];
 
 const skillCategories = [
@@ -32,7 +37,7 @@ const skillCategories = [
   },
   {
     id: "backend",
-    name: "Backend & Database",
+    name: "Backend & Databases",
     icon: Database,
     skills: [
       { name: "Node.js", logo: "/node.png" },
@@ -51,103 +56,133 @@ const skillCategories = [
       { name: "VS Code", logo: "/vscode.png" },
       { name: "Postman", logo: "/postman.png" },
       { name: "Figma", logo: "/figma.jpg" },
-      {name: "Netlify", logo: "/netlify.png" },
-      {name: "Vercel", logo: "/vercel.png" },
+      { name: "Netlify", logo: "/netlify.png" },
+      { name: "Vercel", logo: "/vercel.png" },
     ],
   },
 ];
+
+/* -----------------------------------
+   MAIN COMBINED SECTION COMPONENT
+------------------------------------ */
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState("frontend");
   const activeSkills = skillCategories.find((cat) => cat.id === activeCategory);
 
   return (
-    <div>
+    <Reveal>
+    <section
+      id="skills"
+      className="py-20 bg-secondary/10 relative overflow-hidden"
+    >
+      {/* Background Accents */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 blur-3xl rounded-full" />
+      </div>
 
-      {/* SKILLS SECTION */}
-      <section id="skills" className="py-24 bg-secondary/60">
-        <div className="max-w-7xl mx-auto px-6">
-
-          {/* Header */}
-          <div className="text-center mb-16 space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-              <Sparkles size={16} />
-              <span className="text-xl">My Expertise</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-semibold text-foreground">
-              Skills & Technologies
-            </h2>
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-16 space-y-4">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+              bg-primary/10 text-primary border border-primary/20"
+          >
+            <Sparkles size={18} />
+            <span className="text-xl font-semibold">My Expertise</span>
           </div>
 
-          {/* Category Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {skillCategories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-full font-medium transition-all
-                  ${
-                    activeCategory === category.id
-                      ? "bg-primary text-white shadow-lg"
-                      : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary border"
-                  }`}
-              >
-                <category.icon size={18} />
-                {category.name}
-              </button>
-            ))}
-          </div>
+          <h2 className="text-4xl md:text-4xl font-semibold text-foreground leading-tight">
+            Skills, Tools & AI That Shape My Development Workflow
+          </h2>
 
-          {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {activeSkills?.skills.map((skill) => (
-              <div
-                key={skill.name}
-                className="flex items-center gap-4 p-4 bg-card rounded-2xl border shadow"
-              >
-                <img
-                  src={skill.logo}
-                  alt={skill.name}
-                  className="w-10 h-10 object-contain"
-                />
-                <span className="text-lg font-medium">{skill.name}</span>
-              </div>
-            ))}
-          </div>
-
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            A blend of strong engineering fundamentals, modern UI craft,  
+            and AI-powered creativity that helps me build better, faster, and smarter.
+          </p>
         </div>
-      </section>
 
-      {/* AI TOOLS SECTION */}
-      <section id="ai-tools" className="py-24 bg-background">
-        <div className="max-w-6xl mx-auto px-6">
+        {/* Category Buttons */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {skillCategories.map((category) => (
+            <button
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`flex items-center gap-2 px-5 py-3 rounded-full transition-all duration-300 font-medium
+                ${
+                  activeCategory === category.id
+                    ? "bg-secondary text-primary shadow-lg shadow-primary/30"
+                    : "bg-card text-muted-foreground border border-border hover:bg-primary/10 hover:text-primary"
+                }`}
+            >
+              <category.icon size={18} />
+              {category.name}
+            </button>
+          ))}
+        </div>
 
-          <div className="text-center mb-14">
-            <h2 className="text-4xl font-semibold text-foreground">
-              AI Tools I Use
-            </h2>
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 mb-20">
+          {activeSkills?.skills.map((skill) => (
+            <div
+              key={skill.name}
+              className="flex items-center gap-4 p-4 bg-card rounded-2xl border
+              hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all"
+            >
+              <img src={skill.logo} alt={skill.name} className="w-10 h-10 object-contain" />
+              <span className="text-lg font-medium">{skill.name}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* AI Tools + How You Use Them */}
+        <div className="max-w-5xl mx-auto text-center mb-10">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full
+              bg-primary/10 text-primary border border-primary/20"
+          >
+            <Bot size={18} />
+            <span className="text-xl font-semibold">AI in My Development Workflow</span>
           </div>
 
-          {/* AI Tools Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-            {aiTools.map((tool) => (
-              <div
-                key={tool.name}
-                className="flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border shadow-sm hover:shadow-lg"
-              >
+          <p className="mt-4 text-muted-foreground text-lg max-w-3xl mx-auto">
+            I use AI tools thoughtfully to accelerate my workflow—  
+            from generating ideas and improving code quality to validating designs  
+            and solving complex logic. AI helps me stay efficient while keeping  
+            creativity and engineering principles at the core.
+          </p>
+        </div>
+
+        {/* AI Tools Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
+          {aiTools.map((tool) => (
+            <div
+              key={tool.name}
+              className="group flex flex-col items-center gap-3 p-6 bg-card rounded-2xl border 
+                shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-300"
+            >
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center 
+                group-hover:bg-primary/20 transition-all">
                 <img
                   src={tool.logo}
                   alt={tool.name}
-                  className="w-12 h-12 object-contain"
+                  className="w-10 h-10 object-contain"
                 />
-                <p className="font-medium">{tool.name}</p>
               </div>
-            ))}
-          </div>
 
+              <p className="font-semibold group-hover:text-primary transition-colors">
+                {tool.name}
+              </p>
+
+              <p className="text-xs text-muted-foreground text-center max-w-[160px]">
+                {tool.use}
+              </p>
+            </div>
+          ))}
         </div>
-      </section>
-
-    </div>
+      </div>
+    </section>
+    </Reveal>
   );
 }
