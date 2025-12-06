@@ -230,3 +230,17 @@ html {
   --sidebar-border: oklch(0.25 0.04 300);
   --sidebar-ring: oklch(0.70 0.16 315);
 }
+/* ============================
+   SCROLL REVEAL ANIMATIONS
+============================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}

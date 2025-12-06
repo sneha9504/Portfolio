@@ -1,97 +1,109 @@
-import { Heart, Sparkles, Coffee, Palette, User } from "lucide-react"
+"use client"
 
-const highlights = [
-  { icon: Palette, label: "Design", description: "UI/UX & Visual Design" },
-  { icon: Sparkles, label: "Frontend", description: "React, Next.js" },
-  { icon: Coffee, label: "Backend", description: "Node.js, Express.js" },
-  { icon: Heart, label: "Passion", description: "Accessible Web" },
+import { Server, Code2, Zap, Layers, Cpu, Sparkles, GitBranch, Rocket } from "lucide-react"
+
+const stats = [
+  { icon: Code2, value: "10+", label: "Projects", sub: "End-to-end builds" },
+  { icon: Zap, value: "3x", label: "Performance Boost", sub: "UI/UX optimizations" },
+  { icon: Server, value: "40+", label: "Commits / Month", sub: "Consistent learning" },
+  { icon: Rocket, value: "100%", label: "Passion", sub: "Quality-driven" },
+]
+
+const skillGroups = [
+  {
+    title: "Frontend",
+    icon: Sparkles,
+    skills: "React, Next.js, Tailwind CSS, UI Architecture",
+  },
+  {
+    title: "Backend",
+    icon: Server,
+    skills: "Node.js, Express.js, REST APIs",
+  },
+  {
+    title: "Databases",
+    icon: Layers,
+    skills: "MongoDB, Firebase, SQL Basics",
+  },
+  {
+    title: "Tools & Workflow",
+    icon: Cpu,
+    skills: "Git, GitHub, VSCode, AI-assisted dev",
+  },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Decorative Background */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
-
+    <section id="about" className="relative py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left - Image Collage */}
-          <div className="relative order-2 lg:order-1">
-            <div className="relative">
-              {/* Main image */}
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
-                <img src="/young-woman-working-laptop-creative-workspace-cozy.jpg" alt="Olivia working" className="w-full h-[500px] object-cover" />
-              </div>
 
-              {/* Floating accent images */}
-              <div className="absolute -top-8 -left-8 w-32 h-32 rounded-2xl overflow-hidden shadow-xl transform -rotate-6 z-20 border-4 border-background">
-                <img src="/coffee-cup-aesthetic-minimalist.jpg" alt="Coffee aesthetic" className="w-full h-full object-cover" />
-              </div>
+        {/* Section Label */}
+        <p className="text-primary font-semibold tracking-widest uppercase text-sm mb-4">
+          ABOUT ME
+        </p>
 
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 rounded-2xl overflow-hidden shadow-xl transform rotate-6 z-20 border-4 border-background">
-                <img src="/design-tools-notebook-creative-flat-lay.jpg" alt="Design tools" className="w-full h-full object-cover" />
-              </div>
+        {/* Title */}
+        <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight max-w-3xl">
+          Crafting clean, fast & user-first digital experiences.
+        </h2>
 
-              {/* Decorative elements */}
-              <div className="absolute -z-10 -bottom-12 -left-12 w-64 h-64 bg-accent/20 rounded-full blur-3xl" />
+        {/* Intro */}
+        <div className="mt-8 space-y-5 text-lg text-muted-foreground max-w-3xl leading-relaxed">
+          <p>
+            I’m <span className="text-foreground font-semibold">Sneha Wani</span>, a Frontend & MERN Stack Developer who enjoys creating 
+            modern, accessible, and intuitive web experiences. I specialize in building 
+            clean UI, seamless interactions, and efficient full-stack functionalities.
+          </p>
+
+          <p>
+            As a fresher, I focus on writing maintainable code, learning industry best 
+            practices, and building scalable interfaces with React, Next.js, Node.js, 
+            and MongoDB. My goal is to blend great engineering with meaningful user experience.
+          </p>
+
+          <p>
+            I love exploring design systems, animations, tech workflows, and performance-oriented development 
+            to build software that feels polished, delightful, and professional.
+          </p>
+        </div>
+
+        {/* Stats Grid */}
+        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all shadow-sm"
+            >
+              <div className="p-2 w-fit rounded-xl bg-primary/10 text-primary mb-3">
+                <item.icon size={20} />
+              </div>
+              <p className="text-3xl font-bold text-foreground">{item.value}</p>
+              <p className="text-sm font-medium text-primary">{item.label}</p>
+              <p className="text-xs text-muted-foreground mt-1">{item.sub}</p>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Right - Content */}
-       <div className="order-1 lg:order-3 space-y-8 max-w-4xl mx-auto">
-  <div className="space-y-4">
-    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary w-fit">
-      <User size={18} className="shrink-0" />
-      <span className="text-lg font-semibold tracking-wide">
-        About Me
-      </span>
-    </div>
+        {/* Skills Section */}
+        <div className="mt-16 p-8 rounded-3xl bg-foreground/[0.02] border border-border backdrop-blur">
+          <h3 className="text-lg font-semibold text-foreground mb-6">Skills & Specialities</h3>
 
-    <h2 className="text-4xl md:text-5xl font-semibold leading-tight">
-      Creating thoughtful, delightful digital experiences with a touch of elegance.
-    </h2>
-  </div>
-
-  <div className="space-y-6 text-lg text-muted-foreground leading-relaxed text-justify">
-    <p>
-      I’m Sneha Wani, a Frontend and MERN Stack Developer passionate about creating clean, modern, and user-focused web experiences. I specialize in building responsive interfaces and beginner-friendly full-stack applications using React, Next.js, Node.js, Express, and MongoDB.
-    </p>
-
-    <p>
-      As a fresher, I focus on writing clear, maintainable code and learning industry-standard development practices. I enjoy turning ideas into working prototypes and continuously improving my skills in frontend design, UI/UX principles, and full-stack development.
-    </p>
-
-    <p>
-      I love exploring new tools, studying modern design trends, and working on projects that help me grow both technically and creatively. With every project, I aim to build better, faster, and more meaningful digital experiences.
-    </p>
-  </div>
-
-
-         
-
-
-          {/* Skill Highlights */}
-          <div className="grid grid-cols-2 gap-4 pt-4">
-            {highlights.map((item) => (
-              <div
-                key={item.label}
-                className="group p-4 rounded-2xl bg-secondary/50 hover:bg-primary/10 border border-transparent hover:border-primary/20 transition-all duration-300"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="p-2 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                    <item.icon size={20} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg text-foreground">{item.label}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
-                  </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {skillGroups.map((group) => (
+              <div key={group.title} className="flex items-start gap-3">
+                <div className="p-2 rounded-xl bg-primary/10 text-primary flex-shrink-0">
+                  <group.icon size={18} />
+                </div>
+                <div>
+                  <p className="font-semibold text-foreground">{group.title}</p>
+                  <p className="text-sm text-muted-foreground">{group.skills}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
+
       </div>
-    </div>
-    </section >
+    </section>
   )
 }
