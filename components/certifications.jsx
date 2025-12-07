@@ -42,12 +42,11 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="relative py-24 md:py-32 bg-secondary/30">
-      {/* Decorative Pattern */}
-      <div className="absolute inset-0 opacity-30 pointer-events-none">
-        <div className="absolute top-20 left-20 w-32 h-32 border border-primary/20 rounded-full" />
-        <div className="absolute bottom-20 right-20 w-48 h-48 border border-primary/20 rounded-full" />
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 border border-primary/20 rounded-full" />
+    <section id="certifications" className="relative py-24 md:py-32 bg-secondary/10">
+      {/* Background Accents */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 blur-3xl rounded-full" />
+        <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent/10 blur-3xl rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative">
