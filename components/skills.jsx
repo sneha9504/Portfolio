@@ -14,12 +14,33 @@ import Reveal from "../components/ui/reveal";
 -------------------------------- */
 
 const aiTools = [
-  { name: "ChatGPT", logo: "/chatgpt.png", use: "Faster debugging & idea exploration" },
-  { name: "Gemini", logo: "/gemini.jpg", use: "Architecture planning & research" },
-  { name: "Claude", logo: "/claude.png", use: "Clean documentation & code clarity" },
-  { name: "Grok", logo: "/grok.png", use: "Problem-solving & deeper logic" },
-  { name: "Perplexity", logo: "/perplexity.png", use: "Instant technical insights" },
+  {
+    name: "ChatGPT",
+    logo: "/chatgpt.png",
+    use: "Accelerates debugging, solution ideation, and rapid problem analysis"
+  },
+  {
+    name: "Gemini",
+    logo: "/gemini.jpg",
+    use: "Supports system architecture planning, technical research, and design validation"
+  },
+  {
+    name: "Claude",
+    logo: "/claude.png",
+    use: "Enhances documentation quality, code readability, and technical communication"
+  },
+  {
+    name: "Grok",
+    logo: "/grok.png",
+    use: "Assists with complex problem-solving and deeper logical reasoning"
+  },
+  {
+    name: "Perplexity",
+    logo: "/perplexity.png",
+    use: "Provides quick, reliable technical insights and up-to-date references"
+  }
 ];
+
 
 const skillCategories = [
   {
