@@ -146,12 +146,7 @@ export default function Skills() {
             <span className="text-xl font-semibold">AI in My Development Workflow</span>
           </div>
 
-          <p className="mt-4 text-muted-foreground text-lg max-w-3xl mx-auto">
-            I use AI tools thoughtfully to accelerate my workflow—  
-            from generating ideas and improving code quality to validating designs  
-            and solving complex logic. AI helps me stay efficient while keeping  
-            creativity and engineering principles at the core.
-          </p>
+          
         </div>
 
         {/* AI Tools Grid */}

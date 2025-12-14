@@ -7,7 +7,7 @@ const stats = [
   { icon: Code2, value: "10+", label: "Projects", sub: "End-to-end builds" },
   { icon: Zap, value: "3x", label: "Performance Boost", sub: "UI/UX optimization" },
   { icon: Rocket, value: "40+", label: "Commits/Month", sub: "Consistency & growth" },
-  { icon: Sparkles, value: "100%", label: "Passion", sub: "Quality-focused coding" },
+  { icon: Layers, value: "5+", label: "Tech Stack", sub: "Versatile development" },
 ]
 
 export default function About() {
@@ -44,23 +44,23 @@ export default function About() {
 
             {/* LEFT */}
             <div className="space-y-6 text-lg text-muted-foreground leading-relaxed max-w-2xl text-justify">
+            <p>
+  I’m <span className="text-foreground font-semibold">Sneha Wani</span>, a Full Stack (MERN) Developer focused on building
+  scalable, user-centric web applications with strong attention to performance, accessibility, and reliability.
+  I translate product requirements into clean, production-ready digital experiences.
+</p>
 
-              <p>
-                I’m <span className="text-foreground font-semibold">Sneha Wani</span>, a Frontend and MERN Stack Developer focused on crafting
-                fast, accessible, and visually polished web experiences. I combine thoughtful UI engineering with
-                practical full-stack development to deliver interfaces that feel effortless and reliable.
-              </p>
+<p>
+  I work with a structured, outcome-driven approach—prioritizing clear architecture, maintainable code,
+  and predictable system behavior. I value simplicity, collaboration, and thoughtful engineering decisions
+  that support long-term growth.
+</p>
 
-              <p>
-                I prioritize maintainable code, scalable architecture, and clear product thinking. My core stack—
-                React, Next.js, Node.js, and MongoDB—helps me build modern applications that are structured,
-                efficient, and easy to evolve.
-              </p>
+<p>
+  With a strong engineering and product mindset, I solve problems around usability, performance, and scalability.
+  My focus is on building dependable software that delivers real user value while aligning with business goals.
+</p>
 
-              <p>
-                With a strong interest in UI/UX foundations, performance tuning, and AI-assisted workflows,
-                I aim to create digital experiences that look refined, respond instantly, and genuinely solve problems.
-              </p>
 
             </div>
 

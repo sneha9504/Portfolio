@@ -79,8 +79,8 @@ function LeftSide() {
       <TypingRoles />
 
       <p className="text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mx-auto lg:mx-0">
-        Passionate about crafting elegant, user-friendly interfaces backed by strong engineering. 
-        I specialize in React, Next.js and modern frontend development workflows.
+        I design and build scalable, user-centric web applications with a strong focus on both frontend experience and backend reliability.
+Specializing in React, Next.js, and modern full-stack architectures, I deliver end-to-end solutions that balance performance, usability, and maintainability.
       </p>
 
       <CTAButtons />

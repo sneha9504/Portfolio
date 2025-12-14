@@ -3,6 +3,15 @@ import { Card, CardContent } from "../components/ui/card"
 
 const certifications = [
   {
+    title: "Full Stack Web Development Certification",
+    issuer: "Felix-Its",
+    date: "September 2025",
+    credential: "168913078",
+    logo: "/felix-its.png",
+    color: "from-blue-100 to-cyan-50",
+    credentialURL: "https://www.credential.net/b8cebe6c-c38e-40bf-927e-cbf7cd42b429#acc.LioSU4cn"
+  },
+  {
     title: "Front-End Development",
     issuer: "Felix-Its",
     date: "August 2025",
@@ -63,7 +72,7 @@ export default function Certifications() {
         </div>
 
         {/* Certifications Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {certifications.map((cert) => (
             <Card
               key={cert.title}
@@ -75,7 +84,8 @@ export default function Certifications() {
               />
 
               <CardContent className="relative p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 md:gap-6">
+
                   {/* Logo */}
                   <div className="shrink-0 w-16 h-16 rounded-2xl bg-background shadow-md p-2 group-hover:scale-110 transition-transform duration-300">
                     <img
@@ -104,7 +114,13 @@ export default function Certifications() {
                   {/* External Link */}
                   <a
                     href={cert.credentialURL || "#"}
-                    className="p-2 rounded-full bg-background/80 text-muted-foreground hover:text-primary hover:bg-background transition-colors opacity-0 group-hover:opacity-100"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+    p-2 rounded-full bg-background/90 text-muted-foreground
+    hover:text-primary hover:bg-background transition-colors
+    opacity-100 md:opacity-0 md:group-hover:opacity-100
+  "
                     aria-label={`View ${cert.title} credential`}
                   >
                     <ExternalLink size={18} />
