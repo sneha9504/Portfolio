@@ -16,6 +16,10 @@ export const metadata = {
     "Sneha Wani — Frontend & Full-stack Developer. Portfolio showcasing projects, experience and contact details for recruiters and teams.",
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "x-default": "/",
+    },
   },
   openGraph: {
     title: "Sneha Wani — Portfolio",
@@ -123,10 +127,6 @@ const jsonLd = {
         "https://www.linkedin.com/in/snehawani/"
       ]
     },
-    {
-      "@type": "Person",
-      "@id": "https://sneha-wani.netlify.app/#person"
-    }
   ]
 };
 
