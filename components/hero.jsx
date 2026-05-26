@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import Image from "next/image";
 import { Button } from "../components/ui/button";
 import { motion } from "framer-motion";
 import Reveal from "../components/ui/reveal";
@@ -73,7 +74,7 @@ function LeftSide() {
       </p>
 
       <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-foreground">
-        Hi, I'm <span className="text-primary">Sneha Wani</span>
+        Hi, I&apos;m <span className="text-primary">Sneha Wani</span>
       </h1>
 
       <TypingRoles />
@@ -175,6 +176,8 @@ function SocialLinks() {
           key={i}
           href={s.href}
           target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${s.href} in a new tab`}
           className="p-3 rounded-full bg-secondary hover:bg-primary hover:text-primary-foreground transition-all hover:scale-110 shadow-sm"
         >
           <s.icon size={20} />
@@ -210,10 +213,13 @@ function RightImage() {
       <div className="absolute inset-0 -m-8 rounded-full border border-primary/10" />
 
       <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-background shadow-2xl shadow-primary/20">
-        <img
+        <Image
           src="/profile.jpg"
           alt="Sneha Wani"
-          className="w-full h-full object-cover"
+          fill
+          sizes="(max-width: 768px) 288px, 320px"
+          className="object-cover"
+          priority
         />
       </div>
     </motion.div>
@@ -238,9 +244,9 @@ function CodeWindow() {
           <code className="text-muted-foreground">
             <span className="text-primary/70">const</span> Sneha = {"{"}
             {"\n"}
-            {"  "}role: <span className="text-accent">'Full Stack Developer'</span>,{"\n"}
-            {"  "}stack: ['React', 'Next.js', 'MongoDB'],{"\n"}
-            {"  "}passion: <span className="text-accent">'Building beautiful systems'</span>
+            {"  "}role: <span className="text-accent">&apos;Full Stack Developer&apos;</span>,{"\n"}
+            {"  "}stack: [&apos;React&apos;, &apos;Next.js&apos;, &apos;MongoDB&apos;],{"\n"}
+            {"  "}passion: <span className="text-accent">&apos;Building beautiful systems&apos;</span>
             {"\n"}
             {"}"};
           </code>

@@ -72,7 +72,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? I'd love to hear from you.
+            Have a project in mind or just want to say hello? I&apos;d love to hear from you.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export default function Contact() {
                 <span className="text-sm font-medium text-primary">A little note</span>
               </div>
               <p className="text-muted-foreground text-sm">
-                I'm always excited to connect with fellow creatives & passionate builders.
+                I&apos;m always excited to connect with fellow creatives & passionate builders.
               </p>
             </div>
           </div>

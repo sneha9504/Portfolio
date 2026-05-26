@@ -112,6 +112,9 @@ export default function Navigation() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -119,6 +122,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation */}
       <div
+        id="mobile-nav"
         className={cn(
           "md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border overflow-hidden transition-all duration-300",
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"

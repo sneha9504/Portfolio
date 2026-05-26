@@ -9,6 +9,7 @@ import {
   Bot,
 } from "lucide-react";
 import Reveal from "../components/ui/reveal";
+import Image from "next/image";
 /* -------------------------------
    DATA: AI Tools + Skill Groups
 -------------------------------- */
@@ -151,7 +152,7 @@ export default function Skills() {
               className="flex items-center gap-4 p-4 bg-card rounded-2xl border
               hover:border-primary/40 hover:shadow-lg hover:shadow-primary/10 transition-all"
             >
-              <img src={skill.logo} alt={skill.name} className="w-10 h-10 object-contain" />
+              <Image src={skill.logo} alt={skill.name} width={40} height={40} className="object-contain" />
               <span className="text-lg font-medium">{skill.name}</span>
             </div>
           ))}
@@ -180,11 +181,7 @@ export default function Skills() {
             >
               <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center 
                 group-hover:bg-primary/20 transition-all">
-                <img
-                  src={tool.logo}
-                  alt={tool.name}
-                  className="w-10 h-10 object-contain"
-                />
+                <Image src={tool.logo} alt={tool.name} width={40} height={40} className="object-contain" />
               </div>
 
               <p className="font-semibold group-hover:text-primary transition-colors">

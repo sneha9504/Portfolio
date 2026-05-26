@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Heart, Github, Linkedin, Twitter, Instagram } from "lucide-react"
 
 const footerLinks = [
@@ -20,9 +21,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-2xl font-semibold text-foreground hover:text-primary transition-colors">
+            <Link href="/" className="text-2xl font-semibold text-foreground hover:text-primary transition-colors">
               Sneha
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground mt-2 flex items-center gap-1 justify-center md:justify-start">
               Crafted with <Heart size={14} className="text-primary fill-primary" /> in India
             </p>

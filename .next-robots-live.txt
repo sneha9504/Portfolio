@@ -1,0 +1,6 @@
+﻿User-agent: *
+Allow: /
+Sitemap: https://sneha-wani.netlify.app/sitemap.xml
+Host: https://sneha-wani.netlify.app
+# Crawl-delay can be added for low-budget hosting if necessary
+

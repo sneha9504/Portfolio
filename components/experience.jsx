@@ -2,8 +2,36 @@
 
 import { Briefcase, MapPin, ArrowRight, ExternalLink } from "lucide-react";
 import Reveal from "../components/ui/reveal"; // Reveal component
+import Image from "next/image";
 
 const experiences = [
+  {
+    role: "Jr. Full Stack Developer",
+    company: "TinyCheque Ventures Pvt. Ltd.",
+    location: "On-Site",
+    period: "Jan 2026 — Mar 2026",
+    logo: "/tinycheque.jpg",
+    certification: "",
+    description: [
+      "Contributed to SEO optimization and frontend development across 3 live production websites, improving search visibility through technical audits using Lighthouse and Ahrefs.",
+      "Resolved Core Web Vitals (LCP) issues by identifying render-blocking resources and implementing performance optimizations, improving Lighthouse scores across all sites.",
+      "Optimized crawlability for standard and AI search bots by fixing crawl errors, configuring robots.txt, and ensuring full content indexability.",
+      "Implemented complete on-page SEO practices including meta tags, canonical URLs, Open Graph tags, structured data, heading hierarchy, and JavaScript rendering strategies.",
+      "Collaborated on frontend development tasks using modern web technologies and Git-based workflows.",
+    ],
+    skills: [
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "SEO",
+      "Core Web Vitals",
+      "Lighthouse",
+      "Ahrefs",
+      "Google Search Console",
+      "JavaScript",
+      "Git",
+    ],
+  },
   {
     role: "Software Development Intern — MERN Stack",
     company: "TechnoHacks Solutions Pvt. Ltd.",
@@ -101,7 +129,7 @@ export default function Experience() {
             {experiences.map((exp, i) => (
               <Reveal key={i} effect="fade-up">
                 <div className="relative grid md:grid-cols-2 gap-1">
-                  
+
                   {/* LEFT → PERIOD ALWAYS */}
                   <div className="hidden md:flex pl-50  items-start justify-start ">
                     <span className="inline-block px-4 py-2  rounded-full text-sm font-medium 
@@ -127,11 +155,15 @@ export default function Experience() {
 
                       {/* LOGO */}
                       <Reveal effect="scale-up">
-                        <img
-                          src={exp.logo}
-                          alt={exp.company}
-                          className="w-14 h-14 object-contain mb-4 opacity-90 group-hover:opacity-100 transition"
-                        />
+                        <div className="w-14 h-14 mb-4 opacity-90 group-hover:opacity-100 transition">
+                          <Image
+                            src={exp.logo}
+                            alt={exp.company}
+                            width={56}
+                            height={56}
+                            className="object-contain"
+                          />
+                        </div>
                       </Reveal>
 
                       {/* Mobile Date */}
@@ -180,6 +212,8 @@ export default function Experience() {
                         <a
                           href={exp.certification}
                           target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`View certification for ${exp.company} in a new tab`}
                           className="mt-4 inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
                         >
                           View Certification
@@ -199,7 +233,8 @@ export default function Experience() {
         <Reveal effect="fade-up">
           <div className="text-center mt-20">
             <a
-              href="#"
+              href="/sneha wani resume.pdf"
+              download="Sneha_Wani_Resume.pdf"
               className="inline-flex items-center gap-2 text-primary hover:gap-3 
                 transition-all duration-300 font-medium text-lg"
             >

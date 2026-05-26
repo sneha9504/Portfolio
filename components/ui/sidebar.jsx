@@ -566,7 +566,7 @@ function SidebarMenuSkeleton({
   ...props
 }) {
   const width = React.useMemo(() => {
-    return `${Math.floor(Math.random() * 40) + 50}%`
+    return '72%'
   }, [])
 
   return (

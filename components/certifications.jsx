@@ -1,5 +1,6 @@
 import { Award, ExternalLink, Calendar } from "lucide-react"
 import { Card, CardContent } from "../components/ui/card"
+import Image from "next/image"
 
 const certifications = [
   {
@@ -88,10 +89,12 @@ export default function Certifications() {
 
                   {/* Logo */}
                   <div className="shrink-0 w-16 h-16 rounded-2xl bg-background shadow-md p-2 group-hover:scale-110 transition-transform duration-300">
-                    <img
+                    <Image
                       src={cert.logo || "/placeholder.svg"}
                       alt={cert.issuer}
-                      className="w-full h-full object-contain"
+                      width={64}
+                      height={64}
+                      className="object-contain"
                     />
                   </div>
 

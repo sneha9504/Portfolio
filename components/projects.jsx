@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Github, Server, ArrowRight, Layers } from "lucide-react";
+import Image from "next/image";
 import { Button } from "../components/ui/button";
 import Reveal from "../components/ui/reveal"; // ⭐ ADD REVEAL
 
@@ -119,10 +120,12 @@ export default function Projects() {
               >
                 {/* IMAGE */}
                 <div className="relative">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
 
                   {/* Metric */}
@@ -153,12 +156,15 @@ export default function Projects() {
                     {/* TECH ICONS */}
                     <div className="flex gap-3 flex-wrap pt-1">
                       {project.stack.map((tech) => (
-                        <img
-                          key={tech}
-                          src={techIcons[tech]}
-                          alt={tech}
-                          className="w-8 h-8 object-contain rounded-md border p-1 bg-card"
-                        />
+                        <div key={tech} className="w-8 h-8 rounded-md border p-1 bg-card flex items-center justify-center">
+                          <Image
+                            src={techIcons[tech]}
+                            alt={tech}
+                            width={28}
+                            height={28}
+                            className="object-contain"
+                          />
+                        </div>
                       ))}
                     </div>
 
@@ -180,6 +186,7 @@ export default function Projects() {
                     <a
                       href={project.liveUrl}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-all"
                     >
                       <ExternalLink size={16} />
@@ -189,6 +196,7 @@ export default function Projects() {
                     <a
                       href={project.githubUrl}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-all"
                     >
                       <Github size={16} />
